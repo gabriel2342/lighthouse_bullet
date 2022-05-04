@@ -4,6 +4,8 @@ class Municipality < ApplicationRecord
   belongs_to :organization
   # 🚅 add belongs_to associations above.
 
+  has_many :service_providers, dependent: :destroy, enable_updates: true
+  has_many :service_providers_hours, class_name: "ServiceProviders::Hour", dependent: :destroy
   # 🚅 add has_many associations above.
 
   has_one :team, through: :organization

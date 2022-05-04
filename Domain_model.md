@@ -13,16 +13,16 @@ Municipality
     has_many :serviceproviders
 
     ServiceProvider 
-        rails g model service_provider name:string about:text street:string city:string state:string zip:string contact_person:string phone:string email:string logo:avatar url:string municipality:references
-            bin/super-scaffold crud ServiceProvider Municipality,Organization,Team name:text_field about:text_area street:text_field city:text_field state:text_field zip:text_field contact_person:text_field phone:phone_field email:email_field logo:cloudinary_image url:text_field
+        rails g model service_provider name:string about:text street:string city:string state:string zip:string contact_person:string phone:string email:string url:string municipality:references
+            bin/super-scaffold crud ServiceProvider Municipality,Organization,Team name:text_field about:text_area street:text_field city:text_field state:text_field zip:text_field contact_person:text_field phone:phone_field email:email_field url:text_field
             
             has_many :hours
             has_many :services
             belongs_to :municipality
        
             Hour
-                rails g model ServiceProvider::Hour municipality:refereneces name:string
-                bin/super-scaffold crud ServiceProvider::Hour Municipality,Team name:text_field 
+                rails g model ServiceProviders::Hour municipality:references name:string
+                bin/super-scaffold crud ServiceProviders::Hour Municipality,Organization,Team name:text_field 
     
 
             ProviderHour

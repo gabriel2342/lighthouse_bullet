@@ -1,5 +1,7 @@
 default:
   models:
+    ServiceProviders::Hour: read
+    ServiceProvider: read
     Municipality: read
     Organization: read
     Organization: read
@@ -31,6 +33,8 @@ admin:
     - admin
     - editor
   models:
+    ServiceProviders::Hour: manage
+    ServiceProvider: manage
     Municipality: manage
     Organization: manage
     Organization: manage
