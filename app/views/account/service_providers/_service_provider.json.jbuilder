@@ -11,7 +11,6 @@ json.extract! service_provider,
   :phone,
   :email,
   :url,
-  :hour_ids,
   # 🚅 super scaffolding will insert new fields above this line.
   :created_at,
   :updated_at

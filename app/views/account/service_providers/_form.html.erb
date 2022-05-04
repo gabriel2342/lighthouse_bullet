@@ -12,8 +12,6 @@
     <%= render 'shared/fields/phone_field', method: :phone %>
     <%= render 'shared/fields/email_field', method: :email %>
     <%= render 'shared/fields/text_field', method: :url %>
-    <%= render 'shared/fields/super_select', method: :hour_ids, html_options: {multiple: true},
-      choices: @service_provider.valid_hours.map { |hour| [hour.label_string, hour.id] } %>
     <%# 🚅 super scaffolding will insert new fields above this line. %>
   <% end %>
 

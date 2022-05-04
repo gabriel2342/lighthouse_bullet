@@ -75,11 +75,9 @@ class Account::ServiceProvidersController < Account::ApplicationController
       :email,
       :url,
       # 🚅 super scaffolding will insert new fields above this line.
-      hour_ids: [],
       # 🚅 super scaffolding will insert new arrays above this line.
     )
 
-    assign_select_options(strong_params, :hour_ids)
     # 🚅 super scaffolding will insert processing for new fields above this line.
 
     strong_params

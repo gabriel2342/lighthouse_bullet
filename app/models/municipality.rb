@@ -6,8 +6,6 @@ class Municipality < ApplicationRecord
 
   has_many :service_providers, dependent: :destroy, enable_updates: true
   has_many :service_providers_hours, class_name: "ServiceProviders::Hour", dependent: :destroy
-  has_many :service_providers_operating_hours, class_name: "ServiceProviders::OperatingHour", dependent: :destroy
-  has_many :service_providers, through: :service_providers_operating_hours
   # 🚅 add has_many associations above.
 
   has_one :team, through: :organization

@@ -63,12 +63,6 @@ en:
         _: &url Url
         label: *url
         heading: *url
-      hour_ids: &hours
-        _: &hour_ids Hours
-        label: *hour_ids
-        heading: *hour_ids
-        placeholder: None
-      hours: *hours
       # 🚅 super scaffolding will insert new fields above this line.
       created_at:
         _: &created_at Added
@@ -135,7 +129,6 @@ en:
         phone: *phone
         email: *email
         url: *url
-        hour_ids: *hour_ids
         # 🚅 super scaffolding will insert new activerecord attributes above this line.
         created_at: *created_at
         updated_at: *updated_at
