@@ -25,15 +25,14 @@ Municipality
                 bin/super-scaffold crud ServiceProviders::Hour Municipality,Organization,Team name:text_field 
     
 
-            ProviderHour
-            rails g model ServiceProvider::ProviderHour service_provider:references hour:references 
+            OperatingHour
+            rails g model ServiceProviders::OperatingHour service_provider:references hour:references 
 
 
-            bin/super-scaffold join-model ServiceProvider::ProviderHour Municipality,Team service_provider_id{class_name=ServiceProvider} hour_id{class_name=ServiceProvider::Hour }
+            bin/super-scaffold join-model ServiceProviders::OperatingHour service_provider_id{class_name=ServiceProvider} hour_id{class_name=ServiceProviders::Hour }
 
 
-            bin/super-scaffold crud-field ServiceProvider hour_ids:super_select{class_name=ServiceProvider::Hour}
-
+            bin/super-scaffold crud-field ServiceProvider hour_ids:super_select{class_name=ServiceProviders::Hour}
              in app/models/project.rb add
                     def valid_hours
                         team.service_provider_hours

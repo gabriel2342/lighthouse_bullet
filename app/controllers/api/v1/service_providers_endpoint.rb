@@ -20,6 +20,7 @@ class Api::V1::ServiceProvidersEndpoint < Api::V1::Root
       optional :email, type: String, desc: Api.heading(:email)
       optional :url, type: String, desc: Api.heading(:url)
       # 🚅 super scaffolding will insert new fields above this line.
+      optional :hour_ids, type: Array, desc: Api.heading(:hour_ids)
       # 🚅 super scaffolding will insert new arrays above this line.
 
       # 🚅 super scaffolding will insert processing for new fields above this line.

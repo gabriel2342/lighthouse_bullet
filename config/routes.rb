@@ -71,6 +71,7 @@ Rails.application.routes.draw do
             resources :service_providers
             namespace :service_providers do
               resources :hours
+              resources :hours
             end
           end
         end
