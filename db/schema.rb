@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_03_163113) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_04_155615) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -135,15 +135,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_163113) do
     t.index ["membership_id"], name: "index_tangible_things_reassignments_on_membership_id"
   end
 
-  create_table "municipalities", force: :cascade do |t|
-    t.bigint "organization_id", null: false
-    t.string "name", null: false
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["organization_id"], name: "index_municipalities_on_organization_id"
-  end
-
   create_table "oauth_access_grants", force: :cascade do |t|
     t.bigint "resource_owner_id", null: false
     t.bigint "application_id", null: false
@@ -256,23 +247,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_163113) do
     t.datetime "updated_at", precision: nil, null: false
     t.index ["membership_id"], name: "index_tangible_things_assignments_on_membership_id"
     t.index ["tangible_thing_id"], name: "index_tangible_things_assignments_on_tangible_thing_id"
-  end
-
-  create_table "service_providers", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "about"
-    t.string "street"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.string "contact_person"
-    t.string "phone", null: false
-    t.string "email"
-    t.string "url"
-    t.bigint "municipality_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["municipality_id"], name: "index_service_providers_on_municipality_id"
   end
 
   create_table "teams", id: :serial, force: :cascade do |t|
@@ -395,7 +369,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_163113) do
   add_foreign_key "memberships_reassignments_assignments", "memberships"
   add_foreign_key "memberships_reassignments_assignments", "memberships_reassignments_scaffolding_completely_concrete_tangi", column: "scaffolding_completely_concrete_tangible_things_reassignments_i"
   add_foreign_key "memberships_reassignments_scaffolding_completely_concrete_tangi", "memberships"
-  add_foreign_key "municipalities", "organizations"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_applications", "teams"
@@ -407,7 +380,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_163113) do
   add_foreign_key "scaffolding_completely_concrete_tangible_things", "scaffolding_absolutely_abstract_creative_concepts", column: "absolutely_abstract_creative_concept_id"
   add_foreign_key "scaffolding_completely_concrete_tangible_things_assignments", "memberships"
   add_foreign_key "scaffolding_completely_concrete_tangible_things_assignments", "scaffolding_completely_concrete_tangible_things", column: "tangible_thing_id"
-  add_foreign_key "service_providers", "municipalities"
   add_foreign_key "users", "oauth_applications", column: "platform_agent_of_id"
   add_foreign_key "webhooks_outgoing_endpoints", "teams"
   add_foreign_key "webhooks_outgoing_events", "teams"
