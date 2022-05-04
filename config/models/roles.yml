@@ -1,5 +1,7 @@
 default:
   models:
+    Municipality: read
+    Organization: read
     Organization: read
     Team: read
     Membership:
@@ -29,6 +31,8 @@ admin:
     - admin
     - editor
   models:
+    Municipality: manage
+    Organization: manage
     Organization: manage
     Team: manage
     Membership: manage

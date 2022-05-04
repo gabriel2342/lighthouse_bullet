@@ -5,7 +5,7 @@ en:
       label: *label
     navigation:
       label: *label
-      icon: 'ti ti-world'
+      icon: fal fa-puzzle-piece
     buttons: &buttons
       new: Add New Organization
       create: Create Organization
